@@ -1,0 +1,29 @@
+[
+  {
+    "id"   : "othello-deepseek",
+    "name" : "Local deepseek agent",
+    "description":"",
+    "availability":1,
+    "model": "fireworks::accounts/fireworks/models/deepseek-v3",
+    "temperature": 1.0,
+    "max_tokens": 16384,
+    "timeout": 120	
+  },
+  {
+    "id"   : "othello-llama",
+    "name" : "Local llama agent",
+    "description":"",
+    "availability":1,
+    "model": "fireworks::accounts/fireworks/models/llama-v3p1-70b-instruct",
+    "temperature": 1.0,
+    "max_tokens": 16384,
+    "timeout": 30	
+  },
+  {
+    "id":   "random",
+    "name": "Random agent",
+    "availability":1,
+    "description":"It makes moves at random",
+    "prompt":"random"
+  }
+]
