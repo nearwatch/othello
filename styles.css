@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background-color: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+	max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    margin-bottom: 24px;
+}
+.title {
+    flex: 1;
+    margin-right: 16px;
+}
+.title-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.menu-button {
+    color: #c3bdbd;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 2px 0;
+    z-index: 1001;
+    position:absolute;
+    right:0;
+}
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 1000;
+}
+.menu-content {
+    padding: 20px;
+    width: 100%;
+}
+.menu-item {
+	width: 80%;
+    color: white;
+    font-size: 20px;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.menu-item:hover {
+    color: #ffd700;
+}
+.search-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+	width: 100%;
+}
+.search-input::placeholder {
+    color: #888;
+}
+.search-button {
+    padding: 10px 15px;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.search-result {
+	padding:0px;
+    margin-top: 20px;
+}
+.search-row {
+    background-color: #333333;
+    padding: 12px 6px 12px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+	cursor:pointer;
+}
+.no_agent{
+	margin-top: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+	text-align: center;
+	color: silver;
+}
+.pending{
+	margin-left: 15px;
+	padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color: #777;	
+	height:28px;
+}
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 16px 8px;
+}
+button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+button:active {
+    background-color: #666666;
+}
+button:disabled, button[disabled]{
+  background-color: #444;
+  color: #666666;
+}
+.leaderboard {
+    margin: 16px 0;
+}
+.pair-agents-data{
+    display: flex;
+	margin: 10px 0 10px;
+	cursor: pointer;
+}
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    padding: 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+	cursor:pointer;
+}
+.pair-log {
+	width: 100%; 
+	height: 650px;
+	font-family: "Courier New";
+	font-size: 16px; 
+	background-color: #1a1a1a;
+	color: #888;
+	border: 0px;
+	outline: none;
+}
+.agent-name {
+    color: #ffcc00;
+    font-size: 24px;
+    font-weight: bold;
+}
+.agent-descr {
+    color: #c3bdbd;
+    font-size: 16px;
+}
+.agent-stats {
+	margin-top:10px;
+    color: #ff8c00;
+    font-size: 20px;
+    font-weight: bold;
+}
+.agent_pages{
+    padding: 16px;
+    color: #888;
+    font-size: 20px;
+}
+.agentdata {
+    padding: 16px;
+}
+.tools-fields{
+    padding: 20px 0;
+}
+.tools-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 50px 0px;
+}
+.tools-title{
+    padding: 16px;
+    color: #ffcc00;
+    font-size: 24px;
+    font-weight: bold;
+}
+.tools-input{
+	margin: 0 0 0 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+.tools-text{
+	width: 80px;
+	padding: 12px 0;
+    font-size: 16px;
+    color: silver;
+}
+.tools-data{
+	padding: 16px;
+}
+.tools-container{
+	margin-top: 20px;
+}
+.pair-agent-scores {
+    color: #ff8c00;
+    font-size: 24px;
+    font-weight: bold;
+	width: 35px;
+}
+.game-data {
+    color: #c3bdbd;
+    font-size: 16px;
+}
+.player-name {
+    color: #c3bdbd;
+    font-size: 20px;
+}
+.player-description {
+	margin-top:5px;
+    color: #c3bdbd;
+    font-size: 16px;
+}
+.player-score {
+    color: #ff8c00;
+    font-size: 20px;
+    font-weight: bold;
+}
+.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+}
+.move-rect {
+	fill: rgba(0, 0, 0, 0.1);
+	stroke: white;
+	stroke-width: 0;
+}
+.move-rect:hover {
+	fill: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+.board-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+}
+.piece {
+	transition: fill 0.3s ease;
+}
+.piece.white {
+	fill: white;
+	stroke: #333;
+	stroke-width: 0;
+	font-family: Arial, sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+.piece.black {
+	fill: #603030;
+	stroke: #222;
+	stroke-width: 0;
+	font-family: Arial, sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+.coordinate-text {
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	fill: #888;
+	user-select: none;
+	font-weight: bold;
+}
+@media (max-width: 360px) {
+    .container {
+        padding: 8px;
+    }
+
+    .title-image {
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .player-name {
+        font-size: 14px;
+    }
+
+    .player-score {
+        font-size: 18px;
+    }
+
+    .menu-item {
+        font-size: 18px;
+        padding: 12px 0;
+    }
+}

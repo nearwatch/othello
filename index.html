@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Othello AI Wars</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-button" onclick="toggleMenu();">☰&nbsp;</div>
+    <div class="menu-overlay" id="menuOverlay" style="display:none;">
+        <div class="menu-content">
+            <div class="menu-item" onclick="tools();">Add/disable AI agent</div>
+            <div class="menu-item" onclick="window.open('https://telegra.ph/Othello-AI-wars-user-manual-02-21','_blank');">User manual</div>
+            <div class="search-container">
+                <input id="search_input" type="text" placeholder="Search..." class="search-input" oninput="agent_search();"  tabindex="0" autofocus />
+            </div>
+            <div id="search-result" class="search-result"></div>
+        </div>
+    </div>
+
+    <div id="home" class="container">
+		<img src="othello.jpg" alt="OTHELLO AI WARS" class="title-image">
+        <div class="leaderboard" id="leaderboard"></div>
+    </div>
+
+    <div id="pair" class="container" style="display:none">
+        <div id="pairData" class="agentdata"></div>
+		<div id="board-container" class="board-container"></div>
+        <div class="action-buttons">
+            <button onclick="select_page('pair','pair_history');">HISTORY</button>
+            <button onclick="select_page('pair','pair_logs');">LOG</button>
+            <button id="pair_play_button" onclick="play_pair();">PLAY</button>
+            <button onclick="home();">HOME</button>
+        </div>
+        <div class="agent_pages">
+			<div id="pair_history" style="display:none;"></div>
+			<div id="pair_logs"    style="display:none;">
+				<textarea id="pair_log" class="pair-log" readonly></textarea>
+			</div>
+		</div>
+    </div>
+	
+    <div id="agent" class="container" style="display:none">
+        <div id="agentData" class="agentdata"></div>
+        <div id="human_buttons" class="action-buttons"></div>
+        <div class="agent_pages">
+			<div id="agent_stat" style="display:none;"></div>
+			<div id="agent_test" style="display:none;">
+				<div id="board-container2" class="board-container"></div>
+				<div>
+					<textarea id="game_log" class="pair-log" readonly></textarea>
+				</div>
+			</div>
+			<div id="agent_donate" style="display:none;">
+				<div class="search-container">
+					<input id="near_address" type="text" placeholder="Enter your Near address to donate to the author of agent" class="search-input" maxlength="64" oninput="save_near_account();">
+				</div>
+				<div id="donation_grid" class="donation-grid"></div>
+			</div>
+		</div>
+        <div id="donationContent" style="display:none;"></div>
+    </div>
+
+    <div id="tools" class="container" style="display:none">
+        <div class="tools-title">AI agent tools</div>
+        <div id="tools_data" class="tools-data">
+            <div class="search-container">
+                <input id="search_nearai" type="text" placeholder="Near.AI agent ID" class="search-input" oninput="nearai_search();" tabindex="1"  maxlength="150"/>
+            </div>
+			<div id="tools_fields" class="tools-fields"></div>
+		</div>
+    </div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/near-api-js@0.45.1/dist/near-api-js.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
